@@ -98,13 +98,17 @@ mc_agent = FirstVisitMC(
 
 ## File Structure
 
+```
 Tabular-Reinforcement-Learning-Algorithms/
 │
 ├── README.md                          # Project documentation
+├── requirements.txt                   # Python dependencies
+├── LICENSE                            # MIT License
+├── .gitignore                         # Git ignore file
 │
 ├── rl_algorithms.py                   # ALL algorithms in one file
 │   ├── class ValueIteration
-│   ├── class PolicyIteration  
+│   ├── class PolicyIteration
 │   ├── class FirstVisitMC
 │   ├── class SARSA
 │   └── class QLearningAgent
@@ -113,3 +117,13 @@ Tabular-Reinforcement-Learning-Algorithms/
 │
 └── examples/
     └── demo.py                        # Demonstration script
+```
+
+### File Descriptions
+
+| File | Description |
+|------|-------------|
+| **rl_algorithms.py** | Main Python file containing all 5 algorithm classes and utility functions |
+| **Tabular_RL_Algorithms.ipynb** | Jupyter notebook version for interactive exploration |
+| **requirements.txt** | List of Python packages needed (numpy, gymnasium) |
+| **examples/demo.py** | Quick demo script to test all algorithms |
