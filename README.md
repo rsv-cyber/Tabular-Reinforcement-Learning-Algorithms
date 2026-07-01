@@ -45,12 +45,8 @@ A comprehensive implementation of **tabular Reinforcement Learning algorithms** 
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/Tabular-Reinforcement-Learning-Algorithms.git
+git clone https://github.com/rsv-cyber/Tabular-Reinforcement-Learning-Algorithms.git
 cd Tabular-Reinforcement-Learning-Algorithms
-
-# Create virtual environment (optional)
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install numpy gymnasium
