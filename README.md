@@ -5,12 +5,12 @@ A comprehensive implementation of **tabular Reinforcement Learning algorithms** 
 ## 📋 Table of Contents
 
 - [Algorithms Implemented](#-algorithms-implemented)
-- [Results](#-results)
+- [Environment: FrozenLake](#-environment-:-frozenlake)
+- [Performance Comparison](#-performance-comparison)
 - [Installation](#-installation)
 - [Usage](#-usage)
 - [File Structure](#-file-structure)
-- [Algorithm Comparison](#-algorithm-comparison)
-- [License](#-license)
+
 
 ## Algorithms Implemented
 
@@ -50,3 +50,66 @@ cd Tabular-Reinforcement-Learning-Algorithms
 
 # Install dependencies
 pip install numpy gymnasium
+```
+
+## Usage
+
+### Option 1: Run All Algorithms at Once
+
+```bash
+python rl_algorithms.py
+```
+
+### Option 2: Run Individual Algorithms
+
+```bash
+# Example: Run Q-Learning only
+from rl_algorithms import QLearningAgent
+import gymnasium as gym
+
+env = gym.make("FrozenLake-v1", is_slippery=False)
+agent = QLearningAgent(env, alpha=0.8, gamma=0.95, epsilon=0.8)
+policy, q_values = agent.train(num_episodes=5000)
+
+# Visualize the policy
+from rl_algorithms import print_policy_grid
+print_policy_grid(policy, "Q-Learning Optimal Policy")
+```
+
+### Option 3: Interactive Jupyter Notebook
+
+```bash
+jupyter notebook Tabular_RL_Algorithms.ipynb
+```
+
+### Option 4: Custom Hyperparameter Tuning
+
+```bash
+# Modify parameters in rl_algorithms.py or pass them directly
+vi_agent = ValueIteration(env, discount_factor=0.99, theta=1e-8)
+mc_agent = FirstVisitMC(
+    env, 
+    discount_factor=0.95, 
+    epsilon=0.7,          # Higher exploration
+    epsilon_decay=0.999,  # Slower decay
+    min_epsilon=0.02      # Lower minimum
+)
+```
+
+## File Structure
+
+Tabular-Reinforcement-Learning-Algorithms/
+│
+├── README.md                          # Project documentation
+│
+├── rl_algorithms.py                   # ALL algorithms in one file
+│   ├── class ValueIteration
+│   ├── class PolicyIteration  
+│   ├── class FirstVisitMC
+│   ├── class SARSA
+│   └── class QLearningAgent
+│
+├── Tabular_RL_Algorithms.ipynb        # Jupyter notebook (original)
+│
+└── examples/
+    └── demo.py                        # Demonstration script
